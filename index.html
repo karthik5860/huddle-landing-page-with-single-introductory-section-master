@@ -13,42 +13,63 @@
   <title>Frontend Mentor | Huddle landing page with single introductory section</title>
 
   <style>
-    *{
-      margin: 0;
-      padding: 0;
-    }
     html{
-
-    }
-    body{
       background: url(images/bg-desktop.svg) no-repeat,hsl(257, 40%, 49%);
-      background-size: 100vw 100vh;
-      min-height: 100vh;
+      background-size: 100% 100%;
       font-family: 'Open Sans', sans-serif;
       /*font-family: 'Poppins', sans-serif;}*/
     }
-    
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    .main{
+      min-height: 100vh ;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+    .mainblock{
+      display: grid;
+      grid-template-columns: 50% 50%;
+      padding: 0 80px;
+    }
+    .mainblock div{
+      /*padding: 20px;*/
+    }
+    .content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 100px;
+      color: white;
+    }
     .logo{
+      position: absolute;
+      top: 0;
       width: 100%;
-      height: 200px;
+      height: max(100px,7vw);
       padding: min(60px,10%);
       box-sizing: border-box;
     }
     .logo img{
       width: max(200px,17%);
     }
-    .mainblock{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    .picture img{
+      /*object-fit: cover;*/
+      width: 100%;
+      height: 100%;
     }
-    .picture{
-      padding: 0 20px 0 100px;
+    .icon{
+      position: absolute;
+      bottom: 0;
+      height: 100px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      padding: 0 100px 0 0;
+      box-sizing: border-box;
     }
-    .content{
-      padding: 50px 120px 0 50px;
-      color:white;
-    }
-
     h1{
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
@@ -71,22 +92,15 @@
       background: hsl(300, 69%, 71%);
       color: white;
     }
-    .icon{
-      width: 100%;
-      height: 100px;
-      display: flex;
-      justify-content: flex-end;
-      padding: 60px 70px 0 0 ;
-      box-sizing: border-box;
-    }
     i{
       color: white;
       font-size: 25px;
+      text-align: center;
+      vertical-align: middle;
       width: 30px;
       height: 30px;
-      text-align: center;
+      margin: 10px;
       padding: 5px;
-      margin-right: 20px;
       border: solid 1px white;
       border-radius: 50%;
     }
@@ -94,33 +108,32 @@
       color: hsl(300, 69%, 71%);
       border: solid 1px hsl(300, 69%, 71%);
     }
-
-    @media screen and (max-width: 600px){
-
+    @media screen and (max-width: 1000px){
+      html{
+        background: url(images/bg-mobile.svg) no-repeat,hsl(257, 40%, 49%);
+      }
       .mainblock{
-        grid-template-columns: 1fr;
-        grid-template-rows: 50% 50%;
+        grid-template-columns: 100%;
+        padding: 0;
       }
       .picture{
-        padding: 50px;
+        width: 90%;
+        margin: auto;
       }
       .content{
-        padding: 80px;
+        padding: 0;
+        width: 90%;
         text-align: center;
+        margin: auto;
       }
-      h1{
-        font-size: 50px;
-      }
-      p{
-        font-size: 30px;
-        margin-bottom: 50px;
+      button{
+        margin: auto;
       }
       .icon{
         justify-content: center;
-        margin-left: 240px;
+        padding: 0;
       }
     }
-
     
   </style>
 </head>
@@ -150,6 +163,6 @@
       <i class="fa-brands fa-instagram"></i>
     </div>
   </div>
-
+  
 </body>
 </html>
